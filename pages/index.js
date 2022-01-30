@@ -48,7 +48,7 @@ export default function Home() {
   const description = "Bringing back orkut to life";
   const title = "Orkute - Register";
   const url = "https://orkute.fun";
-  const image = "/og-image.png"
+  const image = process.env.NEXT_PUBLIC_BASE_URL + "og-image.png"
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function Home() {
         <meta property="og:url" content={url} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href={`${process.env.NEXT_PUBLIC_BASE_URL}favicon.ico`} />
       </Head>
       <section className="md:h-full flex justify-center items-center flex-col max-w-4xl w-full mx-auto">
         {reserved && (
