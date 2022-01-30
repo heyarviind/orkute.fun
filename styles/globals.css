@@ -10,3 +10,7 @@ body {
 	@apply bg-[#d4dded];
 	font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
+
+a {
+	@apply text-blue-700 cursor-pointer hover:underline;
+}
