@@ -187,6 +187,7 @@ export default function Home() {
             target="_blank"
             className="text-blue-700 hover:underline"
             href="https://twitter.com/heyarviind"
+            rel="noreferrer"
           >
             @heyarviind
           </a>
