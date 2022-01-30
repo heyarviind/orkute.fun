@@ -39,15 +39,29 @@ export default function Home() {
       .then((res) => {
         console.log(res);
         setReserved(true);
-      }).catch(err => {
-        setServerError(err.response.data.message);
       })
+      .catch((err) => {
+        setServerError(err.response.data.message);
+      });
   };
+
+  const description = "Bringing back orkut to life";
+  const title = "Orkute - Register";
+  const url = "https://orkute.fun";
+  const image = "/og-image.png"
 
   return (
     <>
       <Head>
-        <title>Reserve Username - Orkute</title>
+        <title>{title}</title>
+        <meta property="og:type" content="website" />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta name="description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <section className="h-full flex justify-center items-center flex-col max-w-4xl w-full mx-auto">
         {reserved && (
@@ -60,7 +74,9 @@ export default function Home() {
             <div>
               <img src="/logo.svg" className="w-60 mx-auto" />
 
-              <div className="text-center py-2 underline">We are coming soon! Reserve your username now</div>
+              <div className="text-center py-2 underline">
+                We are coming soon! Reserve your username now
+              </div>
 
               <div className="text-center mt-6">
                 <div className="mb-2">
@@ -87,7 +103,9 @@ export default function Home() {
                 Reserve your username [<a>?</a>]
               </div>
 
-              {serverError && <small className="text-red-600">{serverError}</small>}
+              {serverError && (
+                <small className="text-red-600">{serverError}</small>
+              )}
 
               <div className="grid grid-cols-3 gap-2 mt-6">
                 <span className="text-right">Email: </span>
@@ -148,7 +166,8 @@ export default function Home() {
                 </span>
 
                 <small className="col-span-3 mt-2">
-                  We are collecting emails and usernames, once we are live we will notify you via email.
+                  We are collecting emails and usernames, once we are live we
+                  will notify you via email.
                 </small>
               </div>
             </form>
@@ -163,7 +182,7 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-[#bccde9] p-2 w-full text-center mt-2 text-sm">
-          Brought to you by {" "}
+          Brought to you by{" "}
           <a
             target="_blank"
             className="text-blue-700 hover:underline"
@@ -172,7 +191,10 @@ export default function Home() {
             @heyarviind
           </a>
         </div>
-        <small className="text-gray-500 mt-1">Disclaimer: This is a fan-based project and is not affiliated with Orkut.com in any way.</small>
+        <small className="text-gray-500 mt-1">
+          Disclaimer: This is a fan-based project and is not affiliated with
+          Orkut.com in any way.
+        </small>
       </section>
     </>
   );
