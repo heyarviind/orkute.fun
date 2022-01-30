@@ -63,7 +63,7 @@ export default function Home() {
         <meta property="og:image" content={image} />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <section className="h-full flex justify-center items-center flex-col max-w-4xl w-full mx-auto">
+      <section className="md:h-full flex justify-center items-center flex-col max-w-4xl w-full mx-auto">
         {reserved && (
           <div className="shadow rounded-lg bg-yellow-50 p-1.5 w-full mb-2 border-4 border-white px-2">
             Your username has been reserved
